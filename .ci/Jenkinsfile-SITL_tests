@@ -268,7 +268,7 @@ def createTestNode(Map test_def) {
           }
 
           if (!test_ok) {
-            currentBuild.result = "FAILURE"
+            throw new Exception(test_def.name + " ROS Test failed")
           }
         } // stage
         cleanWs()
